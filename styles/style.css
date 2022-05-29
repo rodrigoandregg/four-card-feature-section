@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+    /* fonts */
+    --font1: 'Poppins', sans-serif;
+    /* colors */
+    --teambuilder: hsl(0, 78%, 62%);
+    --supervisor: hsl(180, 62%, 55%);
+    --karma: hsl(34, 97%, 64%);
+    --calculator: hsl(212, 86%, 64%);
+    --heading: hsl(234, 12%, 34%);
+    --paragraph: hsl(229, 6%, 66%);
+    --mainbg: hsl(0, 0%, 98%);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: var(--mainbg);
+    font-family: var(--font1);
+}
+
+.section__feature {
+    width: 320px;
+    margin: 80px auto;
+    color: var(--paragraph);
+}
+
+.feature__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.info__title {
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: var(--heading);
+}
+
+.info__subtitle {
+    font-size: 1.5rem;
+    color: var(--heading);
+}
+
+.info__paragraph {
+    font-size: 1rem;
+}
+
+.feature__cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+.card__container {
+    background-color: var(--mainbg);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px var(--paragraph);
+    padding: 30px;
+    display: grid;
+    gap: 10px;
+    overflow: hidden ;
+    position: relative;
+}
+
+.card__container::before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--supervisor);
+}
+
+.card__container:nth-child(2)::before {
+    background-color: var(--teambuilder);
+}
+
+.card__container:nth-child(3)::before {
+    background-color: var(--karma);
+}
+
+.card__container:nth-child(4)::before {
+    background-color: var(--calculator);
+}
+
+.card__title {
+    font-size: 1.2rem;
+    color: var(--heading);
+}
+
+.card__paragraph {
+    font-size: .8rem;
+}
+
+.card__picture {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 5px;
+}
+
+.card__icon {
+    width: 50px;
+    height: 50px;
+}
+
+/* footer */
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (min-width:1024px) {
+
+    .section__feature {
+        width: 80%;
+    }
+
+    .feature__cards {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+        ". team ."
+        "supervisor team calc"
+        "supervisor karma calc"
+        ". karma ."
+        ;
+    }
+
+    .feature__info {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+    
+    .info__title {
+        font-size: 2rem;
+        font-weight: 200;
+        color: var(--heading);
+    }
+    
+    .info__subtitle {
+        font-size: 2rem;
+        color: var(--heading);
+    }
+
+    .info__paragraph {
+        padding: 0 50px;
+        font-size: 1.3rem;
+    }
+
+    .card__container {
+        grid-area: supervisor;
+        gap: 10px;
+    }
+
+    .card__container:nth-child(2) {
+        grid-area: team;
+    }
+
+    .card__container:nth-child(3) {
+        grid-area: karma;
+    }
+
+    .card__container:nth-child(4) {
+        grid-area: calc;
+    }
+
+    .card__title {
+        font-size: 1rem;
+    }
+
+    .card__paragraph {
+        font-size: .7rem;
+    }
+
+}
+
+@media (min-width:1440px) {
+
+    .info__title {
+        font-size: 2.5rem;
+
+    }
+
+    .info__subtitle {
+        font-size: 2.5rem;
+    }
+
+    .info__paragraph {
+        padding: 0 200px;
+    }
+
+    .card__title {
+        font-size: 1.3rem;
+    }
+
+    .card__paragraph {
+        font-size: 1rem;
+    }
+
+
+}
